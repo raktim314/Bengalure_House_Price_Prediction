@@ -3,13 +3,14 @@
 # Edit at https://www.gitignore.io/?templates=python
 
 ### Python ###
-.ipynb_checkpoints/
-.env/
+.ipynb_checkpoints
+.env
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+.DS_Store
+.idea
 # C extensions
 *.so
 
