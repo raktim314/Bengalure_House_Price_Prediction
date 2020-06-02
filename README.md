@@ -35,12 +35,50 @@ This dataset contains 9 columns and each columns can be accessed by its name.
 
 ## Data Exploration and Visualization
 
+![alt text](https://github.com/raktim314/Bengalure_House_Price_Prediction/blob/master/figures/price_dist.png)
+
+
 From the plot above we can see notice the followings:
 - distributiojn of price is highly skewed.
 - Most of the house price lies below 500,000 INR
 - There are outliers in the dataset which can be seen from the virtical lines in the plot.
 
-The Skewness and the Kurtosis of the dataset is **8.064469** and **108.166513** respectively.
+The Skewness and the Kurtosis of the price of the dataset is **8.064469** and **108.166513** respectively.
+
+![alt text](https://github.com/raktim314/Bengalure_House_Price_Prediction/blob/master/figures/%20balcony.png)
+
+- There are more houses which has 1 or 2 balcony, around 38% each.
+- Around 4% of the record has missing balcony value in the dataset.
+
+
+![alt text](https://github.com/raktim314/Bengalure_House_Price_Prediction/blob/master/figures/%20bath.png)
+
+It can be seen in the graph that a large number of houses have 2 bathrooms though some houses are with 3, 4, 5 or 1 bathrooms.
+
+![alt text](https://github.com/raktim314/Bengalure_House_Price_Prediction/blob/master/figures/%20size.png)
+
+The size of the houses are in BHK, RK or in Bedrooms format. The plot shows that most of the house are 2BHK or 3BHK, around 70% combined.
+
+## Model Building
+
+A baseline model using linear regression algorithm gives the accuracy of 84.5% on test set and average of 82.6% on cross validation score.
+
+
+After applying grid search for parameter tuning on Linear Regression, Lasso and Decision Tree algorithms, we have got the following results:
+
+| Model  |Best Score   |Best parameter  |
+|---|---|---|
+|Linear Regression |0.818354   | {'normalize': True} |
+|Lasso |0.687477   |{'alpha': 2, 'selection': 'random'}   |
+|Decision Tree |0.721503 |{'criterion': 'mse', 'splitter': 'best'} |
+
+
+## Deployement
+
+A local server has been built up to predict the house price using Flask framework. 
+
+
+
   
 
 
